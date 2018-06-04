@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SqMax - Review</title><link href="/" rel="alternate"></link><link href="/feeds/review.atom.xml" rel="self"></link><id>/</id><updated>2018-06-07T00:00:00+02:00</updated><entry><title>Servlet</title><link href="/servlet.html" rel="alternate"></link><published>2018-06-07T00:00:00+02:00</published><updated>2018-06-07T00:00:00+02:00</updated><author><name>sunqiang</name></author><id>tag:None,2018-06-07:/servlet.html</id><summary type="html">&lt;p&gt;Servlet通常被称为服务器端小程序，是运行在服务器端的程序，用于处理及响应客服端的请求。自MVC规范出现后，Servlet的责任开始明确下来，仅仅作为控制器使用。&lt;/p&gt;
+&lt;h2&gt;Servlet定义&lt;/h2&gt;
+&lt;p&gt;Servlet是个特殊的Java类，这个Java类必须继承HttpServlet。Servlet通常被称为服务器端小程序，是运行在服务器端的程序，用于处理及响应客服端的请求。自MVC规范出现后，Servlet的责任开始明确下来，仅仅作为控制器使用。Servlet与客户端通过Servlet容器进行交互,Servlet提供不同的方法用于响应客户端请求。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;doGet:用于响应客户端的GET请求。&lt;/li&gt;
+&lt;li&gt;doPost:用于响应客户端的POST请求。&lt;/li&gt;
+&lt;li&gt;doPut:用于响应客户端的PUT请求。&lt;/li&gt;
+&lt;li&gt;doDelete:用于响应客户端的DELETE请求。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;事实上，客户端的请求通常只有GET和POST两种，Servlet为了响应这两种请求，必须重写doGet和doPost方法。大部分时候，Servlet对于所有请求的响应都是一样的，只需重写一个方法来代替上面的几个方法：只需重写service()方法即可响应客户端的所有请求。
+Servlet在服务器端充当的角色如下图
+&lt;img alt="" src="http://wx4.sinaimg.cn/large/0072Njp2ly1focq1a96ikj30iz06gmzf.jpg"&gt; &lt;/br&gt;
+附：&lt;a href="http://tomcat.apache.org/tomcat-8.5-doc/servletapi/index.html"&gt;Servlet API文档&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Servlet的调用过程和生命周期&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="http://wx4.sinaimg.cn/large/0072Njp2ly1focr862r7kj30eg0b975m.jpg"&gt;
+Servlet的生命周期可以归纳为一下几步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;装载Servlet，这一项操作一般是动态执行的。然而，Servlet通常会提供一个管理的选项，用于在Servlet启动时强制装载和初始化特定的Servlet。&lt;/li&gt;
+&lt;li&gt;Server创建一个Servlet实例。&lt;/li&gt;
+&lt;li&gt;Server调用Servlet的init()方法。&lt;/li&gt;
+&lt;li&gt;一个客户端请求到达Server。&lt;/li&gt;
+&lt;li&gt;Server创建一个请求对象 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Servlet通常被称为服务器端小程序，是运行在服务器端的程序，用于处理及响应客服端的请求。自MVC规范出现后，Servlet的责任开始明确下来，仅仅作为控制器使用。&lt;/p&gt;
+&lt;h2&gt;Servlet定义&lt;/h2&gt;
+&lt;p&gt;Servlet是个特殊的Java类，这个Java类必须继承HttpServlet。Servlet通常被称为服务器端小程序，是运行在服务器端的程序，用于处理及响应客服端的请求。自MVC规范出现后，Servlet的责任开始明确下来，仅仅作为控制器使用。Servlet与客户端通过Servlet容器进行交互,Servlet提供不同的方法用于响应客户端请求。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;doGet:用于响应客户端的GET请求。&lt;/li&gt;
+&lt;li&gt;doPost:用于响应客户端的POST请求。&lt;/li&gt;
+&lt;li&gt;doPut:用于响应客户端的PUT请求。&lt;/li&gt;
+&lt;li&gt;doDelete:用于响应客户端的DELETE请求。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;事实上，客户端的请求通常只有GET和POST两种，Servlet为了响应这两种请求，必须重写doGet和doPost方法。大部分时候，Servlet对于所有请求的响应都是一样的，只需重写一个方法来代替上面的几个方法：只需重写service()方法即可响应客户端的所有请求。
+Servlet在服务器端充当的角色如下图
+&lt;img alt="" src="http://wx4.sinaimg.cn/large/0072Njp2ly1focq1a96ikj30iz06gmzf.jpg"&gt; &lt;/br&gt;
+附：&lt;a href="http://tomcat.apache.org/tomcat-8.5-doc/servletapi/index.html"&gt;Servlet API文档&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Servlet的调用过程和生命周期&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="http://wx4.sinaimg.cn/large/0072Njp2ly1focr862r7kj30eg0b975m.jpg"&gt;
+Servlet的生命周期可以归纳为一下几步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;装载Servlet，这一项操作一般是动态执行的。然而，Servlet通常会提供一个管理的选项，用于在Servlet启动时强制装载和初始化特定的Servlet。&lt;/li&gt;
+&lt;li&gt;Server创建一个Servlet实例。&lt;/li&gt;
+&lt;li&gt;Server调用Servlet的init()方法。&lt;/li&gt;
+&lt;li&gt;一个客户端请求到达Server。&lt;/li&gt;
+&lt;li&gt;Server创建一个请求对象。&lt;/li&gt;
+&lt;li&gt;Server创建一个响应对象。&lt;/li&gt;
+&lt;li&gt;Server激活Servlet的service()方法，传递请求和响应对象作为参数。&lt;/li&gt;
+&lt;li&gt;service()方法获得关于请求对象的信息，处理请求，访问其他资源，获得需要的信息。&lt;/li&gt;
+&lt;li&gt;service()方法使用响应对象的方法,将响应传回Server，最终到达客户端。service()方法可能激活其他方法以处理请求。如doGet，doPost或其他程序员自己开发的方法。&lt;/li&gt;
+&lt;li&gt;对于更多的客户端请求，Server创建新的请求和响应对象，仍然激活此Servlet的service()方法，将这两个对象作为参数传递给它，如此重复以上的循环，但无需再次调用init()方法，Servlet一般只初始化一次。&lt;/li&gt;
+&lt;li&gt;当Server不再需要Servlet时，比如当Server要关闭时，Server调用Servlet的destroy()。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;开发并配置一个简单的Servlet&lt;/h2&gt;
+&lt;p&gt;将编译好的Servlet class文件放到web应用的WEB-INF/classes路径下，然后为了让Servlet能够响应用户请求，还必须将Servlet配置在web应用中。配置Servlet时，需要修改web.xml文件。不过从Servlet3.0开始，新增了注解的方式配置Servlet,只需Servlet类上用@WebServlet注解即可配置一个Servlet。
+下面通过注解配置一个简单的Servlet。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.io.IOException&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.io.PrintWriter&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.servlet.ServletException&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.servlet.annotation.WebServlet&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.servlet.http.HttpServlet&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.servlet.http.HttpServletRequest&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.servlet.http.HttpServletResponse&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt; * @author root&lt;/span&gt;
+&lt;span class="cm"&gt; *&lt;/span&gt;
+&lt;span class="cm"&gt; */&lt;/span&gt;
+&lt;span class="nd"&gt;@WebServlet&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;firstServlet&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;urlPatterns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;/firstServlet&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;})&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;FirstServlet&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;HttpServlet&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;final&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;serialVersionUID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1L&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Override&lt;/span&gt;
+    &lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;service&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;HttpServletRequest&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HttpServletResponse&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+            &lt;span class="kd"&gt;throws&lt;/span&gt; &lt;span class="n"&gt;ServletException&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;IOException&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setContentType&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/html;charSet=UTF-8&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;PrintWriter&lt;/span&gt; &lt;span class="n"&gt;pw&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getWriter&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+        &lt;span class="n"&gt;pw&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello Servlet!&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;其对应的web.xml配置如下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;servlet&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;firstServlet&lt;span class="nt"&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;servlet-class&amp;gt;&lt;/span&gt;FirstServlet&lt;span class="nt"&gt;&amp;lt;/servlet-class&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/servlet&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;servlet-mapping&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;firstServlet&lt;span class="nt"&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;url-pattern&amp;gt;&lt;/span&gt;/firstServlt&lt;span class="nt"&gt;&amp;lt;/url-pattern&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;servlet-mapping&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;load-on-startup Servlet&lt;/h2&gt;
+&lt;p&gt;创建Servlet实例有两个时机：用户请求之时或应用启动之时，应用启动时就创建的Servlet，通常适用于某些后台服务的Servlet，或者需要拦截很多请求的Servlet，这种Servlet通常作为应用的基础Servlet使用，提供重要的后台服务。
+配置load-on-startup的Servlet有两种方式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在web.xml中通过&lt;code&gt;&amp;lt;servlet&amp;gt;&lt;/code&gt;元素的&lt;code&gt;&amp;lt;load-on-startup&amp;gt;&lt;/code&gt;子元素进行配置。&lt;/li&gt;
+&lt;li&gt;通过@WebServlet注解的loadOnStartup属性指定。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中&lt;code&gt;&amp;lt;load-on-startup&amp;gt;&lt;/code&gt;元素或loadOnStartup属性都接受一个整型值，越小，Servlet越优先实例化。&lt;/p&gt;
+&lt;h2&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.csdn.net/evankaka/article/details/45151569"&gt;Servlet入门总结及第一个Servlet程序&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.csdn.net/evankaka/article/details/46673051"&gt;Servlet和Jsp生命周期解读&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content></entry><entry><title>Tomcat</title><link href="/tomcat.html" rel="alternate"></link><published>2018-06-06T00:00:00+02:00</published><updated>2018-06-06T00:00:00+02:00</updated><author><name>sunqiang</name></author><id>tag:None,2018-06-06:/tomcat.html</id><summary type="html">&lt;h2&gt;tomcat服务器&lt;/h2&gt;
+&lt;p&gt;Tomcat下载地址：&lt;a href="http://tomcat.apache.org"&gt;http://tomcat.apache.org&lt;/a&gt;，解压即可。解压缩后有如下的文件结构。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bin:存放启动和关闭Tomcat的命令的路径&lt;/li&gt;
+&lt;li&gt;conf：存放Tomcat的配置，所有Tomcat的配置都在改路径下设置。&lt;/li&gt;
+&lt;li&gt;lib:存放Tomcat服务器的核心类库（JAR文件），如果要扩展Tomcat的功能，也可将第三方类库复制到改路径下。&lt;/li&gt;
+&lt;li&gt;logs:保存Tomcat每次运行后产生的日志。&lt;/li&gt;
+&lt;li&gt;temp: 保存运行过程中生成的临时文件。&lt;/li&gt;
+&lt;li&gt;webapps: 该路径用于自动部署Web应用，将Web应用复制到该路径下，Tomcat会将该应用制动部署在容器中。&lt;/li&gt;
+&lt;li&gt;work:保存Web应用在运行过程中，编译生成的class文件。该文件夹可以删除，但每次启动Tomcat服务器是，系统将再次建立该路径。&lt;/li&gt;
+&lt;li&gt;LIcense等相关文档。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;启动Tomcat服务器：双击Tomcat安装路径下的bin目录中的starup.bat文件即可。&lt;/p&gt;
+&lt;h2&gt;一个完整Web应用的结构&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mail---------------------------Web应用所在目录
+   |----html、jsp、css、js等文件，根目录下的文件外界可以直接访问
+   |----WEB-INF目录
+            |---------classes目录(java类)
+            |---------lib目录(java类运行所需的jar包)
+            |---------web.xml …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;tomcat服务器&lt;/h2&gt;
+&lt;p&gt;Tomcat下载地址：&lt;a href="http://tomcat.apache.org"&gt;http://tomcat.apache.org&lt;/a&gt;，解压即可。解压缩后有如下的文件结构。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bin:存放启动和关闭Tomcat的命令的路径&lt;/li&gt;
+&lt;li&gt;conf：存放Tomcat的配置，所有Tomcat的配置都在改路径下设置。&lt;/li&gt;
+&lt;li&gt;lib:存放Tomcat服务器的核心类库（JAR文件），如果要扩展Tomcat的功能，也可将第三方类库复制到改路径下。&lt;/li&gt;
+&lt;li&gt;logs:保存Tomcat每次运行后产生的日志。&lt;/li&gt;
+&lt;li&gt;temp: 保存运行过程中生成的临时文件。&lt;/li&gt;
+&lt;li&gt;webapps: 该路径用于自动部署Web应用，将Web应用复制到该路径下，Tomcat会将该应用制动部署在容器中。&lt;/li&gt;
+&lt;li&gt;work:保存Web应用在运行过程中，编译生成的class文件。该文件夹可以删除，但每次启动Tomcat服务器是，系统将再次建立该路径。&lt;/li&gt;
+&lt;li&gt;LIcense等相关文档。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;启动Tomcat服务器：双击Tomcat安装路径下的bin目录中的starup.bat文件即可。&lt;/p&gt;
+&lt;h2&gt;一个完整Web应用的结构&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mail---------------------------Web应用所在目录
+   |----html、jsp、css、js等文件，根目录下的文件外界可以直接访问
+   |----WEB-INF目录
+            |---------classes目录(java类)
+            |---------lib目录(java类运行所需的jar包)
+            |---------web.xml(web应用的配置文件)
+     WEB-INF 这个目录下的文件外界无法直接访问，由web服务器负责调用
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;手动部署Web应用&lt;/h2&gt;
+&lt;p&gt;在Tomcat中部署Web应用的方式主要有以下几种。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;利用Tomcat的自动部署。
+该方式是最简单的，只要将一个Web应用复制到Tomcat的webapps下，系统就会把该应用部署到Tomcat中。&lt;/li&gt;
+&lt;li&gt;利用控制台部署Web应用。
+在使用该方式之前，需要在conf目录的tomcat-users.xml中，添加一个用户如下：
+&lt;code&gt;&amp;lt;user username="manager" password="manager" roles="manager-gui"/&amp;gt;&lt;/code&gt;
+然后启动tomcat容器，进入控制台，点击'''Manager App'''来部署web应用。
+&lt;img alt="" src="http://wx3.sinaimg.cn/large/0072Njp2ly1foaj92qnhbj30qb05h0ta.jpg"&gt;
+部署之后，会发现Tomcat的webapps目录下多了一个文件夹，该文件夹的内容和webDemo文件夹的内容完全相同。其实该方式和方式一一样，懂事利用Tomcat自动部署。&lt;/li&gt;
+&lt;li&gt;无需将Web应用复制到Tomcat安装路径下。首先在conf目录下新建Catalina/localhost两层目录路径，在该目录下新建一个任意名字的xml文件例如sq.xml，内容如下：
+&lt;code&gt;&amp;lt;Context docBase="G:/webDemo" debug="0" privileged="true"&amp;gt;&amp;lt;/Context&amp;gt;&lt;/code&gt;
+这样就把我的G盘下的webDemo这个web应用部署在Tomcat容器中了，而不用把该web应用放在Tomcat安装目录的webapps目录下。
+该应用的URL地址为：http://localhost:8080/sq&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Tomcat的体系结构&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="http://wx1.sinaimg.cn/large/0072Njp2ly1foaj935f0fj30ln0dvmyv.jpg"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Server：代表整个Tomcat，它包含所有的容器。&lt;/li&gt;
+&lt;li&gt;Service：相当于一个集合，包含多个Connector（连接）、一个Engine（引擎），它还负责处理所有Connector（连接）获取的客户请求。&lt;/li&gt;
+&lt;li&gt;Connector：一个Connector（连接）在指定的接口上侦听客户的请求，并将客户的请求交给Engine（引擎）来进行处理并获得回应返回给客户请求。&lt;/li&gt;
+&lt;li&gt;Engine：一个Engine（引擎）下可以配置多个虚拟主机Host，每个主机都有一个域名，当Engine获得一个请求时，会把这个请求发送的相应的Host上，Engine有一个默认的虚拟主机，如果没有虚拟主机能够匹配这个请求，那就由这个默认的虚拟主机来进行处理请求。&lt;/li&gt;
+&lt;li&gt;Host：代表一个Virtual host，每个虚拟主机都和某个网络域名想匹配，每个虚拟主机下面可以部署一个或者多个web app，每个web对应一个context，有一个context path，当一个host获取请求时，就把该请求匹配到某个context上。&lt;/li&gt;
+&lt;li&gt;Context：一个context对应一个web aplication，一个web由一个或多个servlet组成，Context在创建的时候将根据配置文件CATALINA_HOME/conf/web.xml和WEBAPP_HOME/WEB-INF/web.xml载入servlet类，当context获取请求时，讲在自己的映射表中需找相匹配的servlet类，如果找到，则执行该类，获得请求的回应，并返回。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;请求处理过程&lt;/h2&gt;
+&lt;p&gt;Tomcat处理一个Http请求过程如下，假如有一个来自浏览器的请求：http://localhost:8080/webDemo/index&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;服务器8080端口接收到客户发来的请求，被一个在那里监听的叫HTTP1.1的 Connector获取了这个链接请求。&lt;/li&gt;
+&lt;li&gt;Connector把请求交给同在Service下的Engine去处理，并等待Engine的响应。&lt;/li&gt;
+&lt;li&gt;Engine把url解析，并把请求传给相对应的Host处理，如果没有相对应的Host，则用默认名叫localhost的Host来处理。&lt;/li&gt;
+&lt;li&gt;Host再把url解析为/webDemo/index.html，匹配context-path为/webDemoway的Context去处理（如果匹配不到就把该请求交给路径名为””的Context去处理）。&lt;/li&gt;
+&lt;li&gt;context-path为/webDemo的Context会匹配Servlet Mapping为/index的Servlet处理；&lt;/li&gt;
+&lt;li&gt;构造HttpServletRequest对象和HttpServletResponse对象，作为参数调用Servlet的doGet或doPost方法；&lt;/li&gt;
+&lt;li&gt;Context把处理完的HttpServletResponse对象返回给Host；&lt;/li&gt;
+&lt;li&gt;Host把HttpServletResponse对象返回给Engine；&lt;/li&gt;
+&lt;li&gt;Engine把HttpServletResponse对象返回给Connector；&lt;/li&gt;
+&lt;li&gt;Connector把HttpServletResponse对象返回给客户browser。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.cnblogs.com/rocomp/p/4802396.html"&gt;Tomcat安装配置，配置，优化及负载均衡详解&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.oschina.net/question/12_52027"&gt;初学 Java Web 开发，请远离各种框架，从 Servlet 开发&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://objcoding.com/2017/06/12/Tomcat-structure-and-processing-request-process/"&gt;http://objcoding.com/2017/06/12/Tomcat-structure-and-processing-request-process/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://brianway.github.io/2016/02/06/javaweb-note-1-Tomcat/"&gt;https://brianway.github.io/2016/02/06/javaweb-note-1-Tomcat/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content></entry><entry><title>My second Review</title><link href="/my-second-review.html" rel="alternate"></link><published>2018-06-04T00:00:00+02:00</published><updated>2018-06-04T00:00:00+02:00</updated><author><name>sunqiang</name></author><id>tag:None,2018-06-04:/my-second-review.html</id><summary type="html">&lt;p&gt;Hello world ! Hello blog!&lt;/p&gt;
+&lt;p&gt;this is a sunny day?&lt;/p&gt;
+&lt;p&gt;but i am not happy!&lt;/p&gt;
+&lt;p&gt;what are you do!
+t服务器
+Tomcat下载地址：&lt;a href="http://tomcat.apache.org"&gt;http://tomcat.apache.org&lt;/a&gt;，解压即可。解压缩后有如下的文件结构。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bin:存放启动和关闭Tomcat的命令的路径&lt;/li&gt;
+&lt;li&gt;conf：存放Tomcat的配置，所有Tomcat的配置都在改路径下设置。&lt;/li&gt;
+&lt;li&gt;lib:存放Tomcat服务器的核心类库（JAR文件），如果要扩展Tomcat的功能，也可将第三方类库复制到改路径下。&lt;/li&gt;
+&lt;li&gt;logs:保存Tomcat每次运行后产生的日志。&lt;/li&gt;
+&lt;li&gt;temp: 保存运行过程中生成的临时文件。&lt;/li&gt;
+&lt;li&gt;webapps: 该路径用于自动部署Web应用，将Web应用复制到该路径下，Tomcat会将该应用制动部署在容器中。&lt;/li&gt;
+&lt;li&gt;work:保存Web应用在运行过程中，编译生成的class文件。该文件夹可以删除，但每次启动Tomcat服务器是，系统将再次建立该路径 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Hello world ! Hello blog!&lt;/p&gt;
+&lt;p&gt;this is a sunny day?&lt;/p&gt;
+&lt;p&gt;but i am not happy!&lt;/p&gt;
+&lt;p&gt;what are you do!
+t服务器
+Tomcat下载地址：&lt;a href="http://tomcat.apache.org"&gt;http://tomcat.apache.org&lt;/a&gt;，解压即可。解压缩后有如下的文件结构。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bin:存放启动和关闭Tomcat的命令的路径&lt;/li&gt;
+&lt;li&gt;conf：存放Tomcat的配置，所有Tomcat的配置都在改路径下设置。&lt;/li&gt;
+&lt;li&gt;lib:存放Tomcat服务器的核心类库（JAR文件），如果要扩展Tomcat的功能，也可将第三方类库复制到改路径下。&lt;/li&gt;
+&lt;li&gt;logs:保存Tomcat每次运行后产生的日志。&lt;/li&gt;
+&lt;li&gt;temp: 保存运行过程中生成的临时文件。&lt;/li&gt;
+&lt;li&gt;webapps: 该路径用于自动部署Web应用，将Web应用复制到该路径下，Tomcat会将该应用制动部署在容器中。&lt;/li&gt;
+&lt;li&gt;work:保存Web应用在运行过程中，编译生成的class文件。该文件夹可以删除，但每次启动Tomcat服务器是，系统将再次建立该路径。&lt;/li&gt;
+&lt;li&gt;LIcense等相关文档。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;启动Tomcat服务器：双击Tomcat安装路径下的bin目录中的starup.bat文件即可。&lt;/p&gt;
+&lt;h2&gt;一个完整Web应用的结构&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mail---------------------------Web应用所在目录
+   |----html、jsp、css、js等文件，根目录下的文件外界可以直接访问
+   |----WEB-INF目录
+            |---------classes目录(java类)
+            |---------lib目录(java类运行所需的jar包)
+            |---------web.xml(web应用的配置文件)
+     WEB-INF 这个目录下的文件外界无法直接访问，由web服务器负责调用
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;手动部署Web应用&lt;/h2&gt;
+&lt;p&gt;在Tomcat中部署Web应用的方式主要有以下几种。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;利用Tomcat的自动部署。
+该方式是最简单的，只要将一个Web应用复制到Tomcat的webapps下，系统就会把该应用部署到Tomcat中。&lt;/li&gt;
+&lt;li&gt;利用控制台部署Web应用。
+在使用该方式之前，需要在conf目录的tomcat-users.xml中，添加一个用户如下：
+&lt;code&gt;&amp;lt;user username="manager" password="manager" roles="manager-gui"/&amp;gt;&lt;/code&gt;
+然后启动tomcat容器，进入控制台，点击'''Manager App'''来部署web应用。
+&lt;img alt="" src="http://wx3.sinaimg.cn/large/0072Njp2ly1foaj92qnhbj30qb05h0ta.jpg"&gt;
+部署之后，会发现Tomcat的webapps目录下多了一个文件夹，该文件夹的内容和webDemo文件夹的内容完全相同。其实该方式和方式一一样，懂事利用Tomcat自动部署。&lt;/li&gt;
+&lt;li&gt;无需将Web应用复制到Tomcat安装路径下。首先在conf目录下新建Catalina/localhost两层目录路径，在该目录下新建一个任意名字的xml文件例如sq.xml，内容如下：
+&lt;code&gt;&amp;lt;Context docBase="G:/webDemo" debug="0" privileged="true"&amp;gt;&amp;lt;/Context&amp;gt;&lt;/code&gt;
+这样就把我的G盘下的webDemo这个web应用部署在Tomcat容器中了，而不用把该web应用放在Tomcat安装目录的webapps目录下。
+该应用的URL地址为：http://localhost:8080/sq&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Tomcat的体系结构&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="http://wx1.sinaimg.cn/large/0072Njp2ly1foaj935f0fj30ln0dvmyv.jpg"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Server：代表整个Tomcat，它包含所有的容器。&lt;/li&gt;
+&lt;li&gt;Service：相当于一个集合，包含多个Connector（连接）、一个Engine（引擎），它还负责处理所有Connector（连接）获取的客户请求。&lt;/li&gt;
+&lt;li&gt;Connector：一个Connector（连接）在指定的接口上侦听客户的请求，并将客户的请求交给Engine（引擎）来进行处理并获得回应返回给客户请求。&lt;/li&gt;
+&lt;li&gt;Engine：一个Engine（引擎）下可以配置多个虚拟主机Host，每个主机都有一个域名，当Engine获得一个请求时，会把这个请求发送的相应的Host上，Engine有一个默认的虚拟主机，如果没有虚拟主机能够匹配这个请求，那就由这个默认的虚拟主机来进行处理请求。&lt;/li&gt;
+&lt;li&gt;Host：代表一个Virtual host，每个虚拟主机都和某个网络域名想匹配，每个虚拟主机下面可以部署一个或者多个web app，每个web对应一个context，有一个context path，当一个host获取请求时，就把该请求匹配到某个context上。&lt;/li&gt;
+&lt;li&gt;Context：一个context对应一个web aplication，一个web由一个或多个servlet组成，Context在创建的时候将根据配置文件CATALINA_HOME/conf/web.xml和WEBAPP_HOME/WEB-INF/web.xml载入servlet类，当context获取请求时，讲在自己的映射表中需找相匹配的servlet类，如果找到，则执行该类，获得请求的回应，并返回。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;请求处理过程&lt;/h2&gt;
+&lt;p&gt;Tomcat处理一个Http请求过程如下，假如有一个来自浏览器的请求：http://localhost:8080/webDemo/index&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;服务器8080端口接收到客户发来的请求，被一个在那里监听的叫HTTP1.1的 Connector获取了这个链接请求。&lt;/li&gt;
+&lt;li&gt;Connector把请求交给同在Service下的Engine去处理，并等待Engine的响应。&lt;/li&gt;
+&lt;li&gt;Engine把url解析，并把请求传给相对应的Host处理，如果没有相对应的Host，则用默认名叫localhost的Host来处理。&lt;/li&gt;
+&lt;li&gt;Host再把url解析为/webDemo/index.html，匹配context-path为/webDemoway的Context去处理（如果匹配不到就把该请求交给路径名为””的Context去处理）。&lt;/li&gt;
+&lt;li&gt;context-path为/webDemo的Context会匹配Servlet Mapping为/index的Servlet处理；&lt;/li&gt;
+&lt;li&gt;构造HttpServletRequest对象和HttpServletResponse对象，作为参数调用Servlet的doGet或doPost方法；&lt;/li&gt;
+&lt;li&gt;Context把处理完的HttpServletResponse对象返回给Host；&lt;/li&gt;
+&lt;li&gt;Host把HttpServletResponse对象返回给Engine；&lt;/li&gt;
+&lt;li&gt;Engine把HttpServletResponse对象返回给Connector；&lt;/li&gt;
+&lt;li&gt;Connector把HttpServletResponse对象返回给客户browser。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.cnblogs.com/rocomp/p/4802396.html"&gt;Tomcat安装配置，配置，优化及负载均衡详解&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.oschina.net/question/12_52027"&gt;初学 Java Web 开发，请远离各种框架，从 Servlet 开发&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://objcoding.com/2017/06/12/Tomcat-structure-and-processing-request-process/"&gt;http://objcoding.com/2017/06/12/Tomcat-structure-and-processing-request-process/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://brianway.github.io/2016/02/06/javaweb-note-1-Tomcat/"&gt;https://brianway.github.io/2016/02/06/javaweb-note-1-Tomcat/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content></entry><entry><title>My first Review</title><link href="/my-first-review.html" rel="alternate"></link><published>2018-06-03T00:00:00+02:00</published><updated>2018-06-03T00:00:00+02:00</updated><author><name>sunqiang</name></author><id>tag:None,2018-06-03:/my-first-review.html</id><summary type="html">&lt;p&gt;Follow is a review of my favorite mechanical keyboard.
+Hello world!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Follow is a review of my favorite mechanical keyboard.
+Hello world!&lt;/p&gt;</content></entry></feed>
